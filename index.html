@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+</head>
+<body>
+    <div class="form1 hidden" id="formID">
+        <h1>EVENT DETAILS</h1>
+            <form id="data-form">
+                <label for="ename">Event Name</label><br>
+                <input type="text" placeholder="Enter Event Name" id="ename" name="ename" autocomplete="off"><br>
+                
+                <label for="edate">Event Date</label><br>
+                <input type="date" placeholder="Enter Event Date" id="edate" name="edate" ><br>
+                
+                <label for="elocation">Event Location</label><br>
+                <input type="text" placeholder="Enter Event Location" id="elocation" name="elocation" autocomplete="off" ><br>
+
+                <label for="ehost">Event Host</label><br>
+                <input type="text" placeholder="Enter Event Host" id="ehost" name="ehost" autocomplete="off" ><br>
+                
+                <button type="button" onclick="addEvent()" class="addbtn">ADD</button>
+            </form>
+        </div>
+    <div class="container1" id="eventsContainer">
+        <div class="header1">
+            <div class="title">
+                <p>EVENT LIST PAGE</p>
+            </div>
+            <div class="btns">
+                <button class="reset" onclick="reset()"><i class="fa-solid fa-trash"></i></button>
+                <button class="todaybtn" onclick="today()">TODAY'S EVENTS</button>
+                <button id="addDateButton" class="addbtn" onclick="viewform()">ADD</button>
+            </div>
+        </div>
+        <div class="noevents" id="noevents"><p>No Events</p></div>
+        <div class="boxes" id="boxes">
+        </div>
+    </div>
+    <div class="container2 hidden" id="ID2" onclick="eventsPage()">
+        <div class="title"><p>EVENT DETAILS PAGE</p></div>
+        <div class="box2">
+            <div class="eventname" id="eventName" ></div>
+            <div class="detailshere" id="eventLocation"></div>
+            <div class="detailshere" id="eventHost"></div>
+            <div class="line"></div>
+            <div class="dateright" id="eventdate"></div>
+        </div>
+    </div>
+    <div class="container3 hidden" id="todaysEventsContainer">
+        <div class="header2">
+            <div class="title"><p>TODAY'S EVENTS</p></div>
+            <div class="right2">
+                <button class="allbtn" onclick="allEvents()" >All EVENTS</button>
+                <div class="todayDate">
+                 <svg class="prev" onclick="prev()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10L13 19L14.4 17.5L7 10L14.4 2.5L13 1L4 10Z" fill="black"/>
+                  </svg>
+                  <p id="todayDate"></p>
+                  <svg class="next" onclick="next()" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M6.99998 1L5.59998 2.5L13 10L5.59998 17.5L6.99998 19L16 10L6.99998 1Z" fill="black"/>
+                  </svg>
+                  </div>
+                  </div>
+            </div>
+            <div class="noevents" id="noevents1"><p>No Events</p></div>
+         <div class="boxes" id="boxesTodaysEvents">
+            
+        </div>
+    </div>
+    
+    <script src="script.js"> </script>
+</body>
+</html>
